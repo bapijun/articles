@@ -7,7 +7,7 @@
 
 - [从浏览器输入URL会发生什么?从浏览器控制台了解http协议](2018-6/http-2018-5-25.md)
 - [从浏览器输入URL会发生什么? 番外篇 cookie机制](2018-6/http-2018-6-5.md)
-
+- [从浏览器输入URL会发生什么2?FPM(FastCGI Process Manager)概述](2018-10/overview_for_fpm.md)
 ### mysql
 
 - [mysql:索引创建和使用的经验原则](2018-6/mysql-index.md)
