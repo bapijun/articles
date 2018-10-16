@@ -38,4 +38,4 @@ PHP-FPM (FastCGI Process Manager) is an alternative PHP FastCGI implementation w
  基本 SAPI 运行状态信息（类似Apache的 mod_status）；
 - 基于 php.ini 的配置文件(在lnmp下通常是fastcgi.conf)。
 
-另外说一点,前两天看到一个面试题提到几个有趣的点.第一,fpm是一个进程池管理器,他可以配置多个进程池.第二,默认状态下fpm的默认端口是9000.
+另外说一点,前两天看到一个面试题提到几个有趣的点.第一,fpm是一个进程池管理器(FastCGI pools,用官方的说法就是一个fastcgi池子),他可以配置多个进程池.第二,默认状态下fpm的默认端口是9000.
