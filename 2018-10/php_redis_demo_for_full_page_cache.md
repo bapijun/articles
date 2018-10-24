@@ -1,4 +1,4 @@
-php reids 实现全页缓存系统
+php redis 实现全页缓存系统
 ===
 ---
 

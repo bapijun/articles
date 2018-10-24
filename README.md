@@ -16,7 +16,7 @@
 - [避免在循环中访问数据库,一次对于PHP代码的优化经历](2018-7/one-experience-for-php-optimization.md)
 - [mysql 语句优化的十个经验](2018-7/ten-rules-for-mysql.md)
 - [mysql:慢查询日志](2018-8/slow_query_log.md)
-
+- [从浏览器输入URL会发生什么2?FPM(FastCGI Process Manager)概述](2018-10/overview_for_fpm.md)
 ### linux
 - [linux: 系统状态工具](2018-8/linux-systom-stat-tool.md)
 
@@ -24,3 +24,7 @@
 - [php结合redis实现抢购demo](2018-8/php_redis_demo_for_flash sale.md)
 - [mysql-redis事务的比较](2018-9/mysql-redis-transaction.md)
 - [php+redis实现排行榜demo](2018-9/php_redis_demo_for_leaderboard.md)
+- [php+reids实现全页缓存系统](2018-10/php_redis_demo_for_full_page_cache.md)
+
+### 操作系统
+- [无符号数 有符号数 与 补码](2018-10/two'scomplement_and_signed_number.md)
