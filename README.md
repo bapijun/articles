@@ -21,7 +21,7 @@
 - [linux: 系统状态工具](2018-8/linux-systom-stat-tool.md)
 
 ### php+redis
-- [php结合redis实现抢购demo](2018-8/php_redis_demo_for_flash sale.md)
+- [php结合redis抢购demo](2018-8/php_redis_demo_for_flash sale.md)
 - [mysql-redis事务的比较](2018-9/mysql-redis-transaction.md)
 - [php+redis实现排行榜demo](2018-9/php_redis_demo_for_leaderboard.md)
 - [php+reids实现全页缓存系统](2018-10/php_redis_demo_for_full_page_cache.md)
