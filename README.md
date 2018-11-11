@@ -28,3 +28,5 @@
 
 ### 操作系统
 - [无符号数 有符号数 与 补码](2018-10/two'scomplement_and_signed_number.md)
+- [无符号数与有符号数(补码)的四则运算1](2018-10/Arithmetic_of_twoscomplement_and_unsigned_number.md)
+- [无符号数与有符号数(补码)的四则运算2](2018-11/Arithmetic_of_twoscomplement_and_unsigned_number2.md)
