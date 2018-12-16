@@ -31,5 +31,8 @@
 - [无符号数与有符号数(补码)的四则运算1](2018-10/Arithmetic_of_twoscomplement_and_unsigned_number.md)
 - [无符号数与有符号数(补码)的四则运算2](2018-11/Arithmetic_of_twoscomplement_and_unsigned_number2.md)
 
+### 代码优化
+- [代码优化1:使用条件数据传送代替条件控制](2018-12\code_optimization1_conditional_data_transfer.md)
+
 ### php源代码解析
 - [从源代码级别的角度看php var_dump和echo的区别](2018-12/var_dump_and_echo.md)
