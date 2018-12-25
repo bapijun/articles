@@ -8,15 +8,16 @@
 - [从浏览器输入URL会发生什么?从浏览器控制台了解http协议](2018-6/http-2018-5-25.md)
 - [从浏览器输入URL会发生什么? 番外篇 cookie机制](2018-6/http-2018-6-5.md)
 - [从浏览器输入URL会发生什么2?FPM(FastCGI Process Manager)概述](2018-10/overview_for_fpm.md)
-### mysql
 
+### mysql
 - [mysql:索引创建和使用的经验原则](2018-6/mysql-index.md)
 - [mysql 查询语句优化经验总结1](2018-6/optimize-query-for-mysql.md)
 - [mysql: blob格式和text格式](2018-7/mysql-blob-text.md)
 - [避免在循环中访问数据库,一次对于PHP代码的优化经历](2018-7/one-experience-for-php-optimization.md)
 - [mysql 语句优化的十个经验](2018-7/ten-rules-for-mysql.md)
 - [mysql:慢查询日志](2018-8/slow_query_log.md)
-- [从浏览器输入URL会发生什么2?FPM(FastCGI Process Manager)概述](2018-10/overview_for_fpm.md)
+
+
 ### linux
 - [linux: 系统状态工具](2018-8/linux-systom-stat-tool.md)
 
@@ -33,6 +34,6 @@
 
 ### 代码优化
 - [代码优化1:使用条件数据传送代替条件控制](2018-12/code_optimization1_conditional_data_transfer.md)
-
+- [代码优化技巧2:循环优化](2018-12/code_optimization_cycle_optimization.md)
 ### php源代码解析
 - [从源代码级别的角度看php var_dump和echo的区别](2018-12/var_dump_and_echo.md)
