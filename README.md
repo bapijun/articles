@@ -35,5 +35,6 @@
 ### 代码优化
 - [代码优化1:使用条件数据传送代替条件控制](2018-12/code_optimization1_conditional_data_transfer.md)
 - [代码优化技巧2:循环优化](2018-12/code_optimization_cycle_optimization.md)
+- [代码优化3:优化内存访问](2018-12/code_optimization3_memory_access.md)
 ### php源代码解析
 - [从源代码级别的角度看php var_dump和echo的区别](2018-12/var_dump_and_echo.md)
