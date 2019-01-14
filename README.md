@@ -26,6 +26,7 @@
 - [mysql-redis事务的比较](2018-9/mysql-redis-transaction.md)
 - [php+redis实现排行榜demo](2018-9/php_redis_demo_for_leaderboard.md)
 - [php+reids实现全页缓存系统](2018-10/php_redis_demo_for_full_page_cache.md)
+- [php+redis实现用户权限判断](2019-1/php_redis_demo_for_authorize.md)
 
 ### 操作系统
 - [无符号数 有符号数 与 补码](2018-10/two'scomplement_and_signed_number.md)
