@@ -4,7 +4,7 @@ php+redis实现用户权限判断
 
 最近刚好有同事在写一个基于redis的权限模块.最开始我们这个模块使用数据库保存权限,但是同事说如果用户请求大的,每一次请求都要访问数据库的数据库可能会扛不住.不如把权限放到redis里面.我redis写的多,就帮他写出这个代码.
 
-对应的代码中有三个文件,![trait.php](1-14/redisBase.php),![Auth.php](1-14/RedisAuth.php)两个代码文件,![test.php](1-14/redisAuthTest.php)一个测试文件
+对应的代码中有三个文件,[trait.php](1-14/redisBase.php),[Auth.php](1-14/RedisAuth.php)两个代码文件,[test.php](1-14/redisAuthTest.php)一个测试文件
 
 ---
 ===
@@ -12,7 +12,7 @@ php+redis实现用户权限判断
 
 ### redisBase
 
-首先我写了一个redis连接的![trait](1-14/redisBase.png),这个是把之前写的几个redis类的连接方法抽取出来了,放在构造函数,再扔到一个trait里面,这样之后写redis的模块,直接放这个trait就好.如果有多个连接池或者远程redis服务器,就修改这个trait.
+首先我写了一个redis连接的[trait](1-14/redisBase.png),这个是把之前写的几个redis类的连接方法抽取出来了,放在构造函数,再扔到一个trait里面,这样之后写redis的模块,直接放这个trait就好.如果有多个连接池或者远程redis服务器,就修改这个trait.
 ```
 /**
  * 通用的redisbase trait 链接数据库
