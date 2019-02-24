@@ -37,6 +37,8 @@
 - [代码优化1:使用条件数据传送代替条件控制](2018-12/code_optimization1_conditional_data_transfer.md)
 - [代码优化技巧2:循环优化](2018-12/code_optimization_cycle_optimization.md)
 - [代码优化3:优化内存访问](2018-12/code_optimization3_memory_access.md)
+### 项目经验
+- [纪录一次面对ddos盗刷微信企业支付的经历](2019-2/a_ddos_attack.md)
 - [实战优化php和mysql:记录一次实际项目中优化数据库访问](2019-1/code_optimization.md)
 ### php源代码解析
 - [从源代码级别的角度看php var_dump和echo的区别](2018-12/var_dump_and_echo.md)
