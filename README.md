@@ -22,7 +22,7 @@
 - [linux: 系统状态工具](2018-8/linux-systom-stat-tool.md)
 
 ### php+redis
-- [php结合redis抢购demo](2018-8/php_redis_demo_for_flash sale.md)
+- [php结合redis抢购demo](2018-8/php_redis_demo_for_flash_sale.md)
 - [mysql-redis事务的比较](2018-9/mysql-redis-transaction.md)
 - [php+redis实现排行榜demo](2018-9/php_redis_demo_for_leaderboard.md)
 - [php+reids实现全页缓存系统](2018-10/php_redis_demo_for_full_page_cache.md)
@@ -43,3 +43,10 @@
 - [实战优化php和mysql:记录一次实际项目中优化数据库访问](2019-1/code_optimization.md)
 ### php源代码解析
 - [从源代码级别的角度看php var_dump和echo的区别](2018-12/var_dump_and_echo.md)
+
+### 网络安全
+- [白帽子谈web安全的思考读后感1网络运营安全](2022-2/operation_safety.md)
+
+### 杂谈
+
+-[读后感如何阅读一本书](2022-2/how_to_read_a_book.md)
