@@ -16,6 +16,7 @@
 - [避免在循环中访问数据库,一次对于PHP代码的优化经历](2018-7/one-experience-for-php-optimization.md)
 - [mysql 语句优化的十个经验](2018-7/ten-rules-for-mysql.md)
 - [mysql:慢查询日志](2018-8/slow_query_log.md)
+- [mysql关联的索引命中.md](2021/mysql关联的索引命中.md)
 
 
 ### linux
@@ -46,7 +47,7 @@
 
 ### 网络安全
 - [白帽子谈web安全的思考读后感1网络运营安全](2022-2/operation_safety.md)
-
+- [同源策略与cros](2021/cros.md)
 ### 杂谈
 
 -[读后感如何阅读一本书](2022-2/how_to_read_a_book.md)
