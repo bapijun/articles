@@ -17,7 +17,7 @@
 - [mysql 语句优化的十个经验](2018-7/ten-rules-for-mysql.md)
 - [mysql:慢查询日志](2018-8/slow_query_log.md)
 - [mysql关联的索引命中.md](2021/mysql关联的索引命中.md)
-
+- [mysql优化经验的再思考.md](2021/mysql2.md)
 
 ### linux
 - [linux: 系统状态工具](2018-8/linux-systom-stat-tool.md)
