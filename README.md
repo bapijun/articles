@@ -21,7 +21,7 @@
 
 ### linux
 - [linux: 系统状态工具](2018-8/linux-systom-stat-tool.md)
-
+- [linux: 我常用的linux shell配置](2021/linux-shell.md)
 ### php+redis
 - [php结合redis抢购demo](2018-8/php_redis_demo_for_flash_sale.md)
 - [mysql-redis事务的比较](2018-9/mysql-redis-transaction.md)
