@@ -51,6 +51,9 @@
 ### 网络安全
 - [白帽子谈web安全的思考读后感1网络运营安全](2022-2/operation_safety.md)
 - [同源策略与cros](2021/cros.md)
+- [白帽子讲web安全读后感1](2022-2/web_security_keyword1.md)
+- [白帽子讲web安全读后感2](2022-2/web_security_keyword2.md)
+
 ### 杂谈
 
 -[读后感如何阅读一本书](2022-2/how_to_read_a_book.md)
