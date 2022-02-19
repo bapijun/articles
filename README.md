@@ -18,7 +18,7 @@
 - [mysql:慢查询日志](2018-8/slow_query_log.md)
 - [mysql关联的索引命中.md](2021/mysql关联的索引命中.md)
 - [mysql优化经验的再思考.md](2021/mysql2.md)
-
+- [mysql:EXPLAIN  SHOW WARNINGS一起使用得到实际执行的sql.md](2021/explain_extend.md)
 ### linux
 - [linux: 系统状态工具](2018-8/linux-systom-stat-tool.md)
 - [linux: 我常用的linux shell配置](2021/linux-shell.md)
