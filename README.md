@@ -39,6 +39,7 @@
 
 ### docker
 - [docker的生命周期和进程的状态](2021/docker_and_process.md)
+ - [腾讯云/阿里云通过docker安装git服务](2022-2022-5/docker-gitlab.md/)
 
 ### 代码优化
 - [代码优化1:使用条件数据传送代替条件控制](2018-12/code_optimization1_conditional_data_transfer.md)
