@@ -24,14 +24,15 @@
 - [linux: 系统状态工具](2018-8/linux-systom-stat-tool.md)
 - [linux: 我常用的linux shell配置](2021/linux-shell.md)
 - [linux日志查看常见方法](2022-4/mylog.md)
-### php+redis
+### php
 - [php结合redis抢购demo](2018-8/php_redis_demo_for_flash_sale.md)
 - [mysql-redis事务的比较](2018-9/mysql-redis-transaction.md)
 - [php+redis实现排行榜demo](2018-9/php_redis_demo_for_leaderboard.md)
 - [php+reids实现全页缓存系统](2018-10/php_redis_demo_for_full_page_cache.md)
 - [php+redis实现用户权限判断](2019-1/php_redis_demo_for_authorize.md)
 - [redis攻击](2022-2/redis_attack.md)
-
+### python
+- [python函数装饰器和php函数装饰器](2022-5/py_decorator.md)
 ### 操作系统
 - [无符号数 有符号数 与 补码](2018-10/two'scomplement_and_signed_number.md)
 - [无符号数与有符号数(补码)的四则运算1](2018-10/Arithmetic_of_twoscomplement_and_unsigned_number.md)
