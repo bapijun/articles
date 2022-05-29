@@ -64,3 +64,4 @@
 
 - [读后感如何阅读一本书](2022-2/how_to_read_a_book.md)
 - [书评: 逃避统治的艺术](2022-4/TheArtofNotBeingGoverned.md)
+- [情商为什么比智商更重要1](2022-5/emotion1.md)
