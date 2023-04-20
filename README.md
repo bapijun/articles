@@ -2,7 +2,12 @@
  ===
 这个是本人的个人博客的一个线上版本,另外还有一个csdn版本的[博客](https://blog.csdn.net/u011822516),包括一些早期的文章.
 
+### cuda
 
+- [cuda-gdb 基础使用指南](2023-3/cuda-gdb.md)
+- [CUDA 内存系统](2023-2/gpu-memory.md)
+- [windows下nvvp的基础使用1](2023-2/nvvp.md)
+  
 ### 网络
 
 - [从浏览器输入URL会发生什么?从浏览器控制台了解http协议](2018-6/http-2018-5-25.md)
