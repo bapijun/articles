@@ -411,3 +411,133 @@ def attach_simulated_quantize(data, kind, sign=True, rounding="round"):
 ```
 
 如果一个节点被声明为需要被量化（QAnnotateExpr），在其被消耗的时候会添加simulated_quantize算子.
+
+### calibrate
+
+calibration是量化过程中用于收集数据并获取量化信息的步骤，一般不会修改计算过程。
+
+这里为了矫正精准，通常会选择使用_kl_scale（kl散度矫正）
+
+@ tvm/python/tvm/relay/quantize/quantize.py
+
+```python
+def quantize(mod, params=None, dataset=None):
+    ...
+    calibrate_pass = tvm.transform.module_pass(
+        calibrate(dataset), opt_level=1, name="QuantizeCalibrate"
+    )
+-> @ tvm/python/tvm/relay/quantize/_calibrate.py
+
+def calibrate(dataset=None):
+    def wrapped_func(mod, _):
+        ...
+        if cfg.calibrate_mode == "kl_divergence":
+            input_scale_func = _kl_scale(mod, dataset)
+        ...
+        if cfg.weight_scale == "max":
+            weight_scale_func = _max_scale
+        ...
+        return _set_params(mod, input_scale_func, weight_scale_func)
+    return wrapped_func
+
+def _set_params(mod, input_scale_func, weight_scale_func):
+    quantize_op = _op.get("relay.op.annotation.simulated_quantize")
+    ...
+    def visit_func(expr):
+        if isinstance(expr, _expr.Call) and expr.op == quantize_op:
+            ...
+            if kind == quantize.QAnnotateKind.WEIGHT:
+                assert isinstance(expr.args[0], _expr.Constant)
+                scale = weight_scale_func(expr)
+            else:
+                scale = input_scale_func(expr)
+            ...
+            valid_range = 2 ** valid_bit
+            const_params[ndom_scale] = _make_const(scale / valid_range)
+            const_params[nclip_min] = _make_const(-(valid_range - 1))
+            const_params[nclip_max] = _make_const((valid_range - 1))
+ 
+    main_func = mod["main"]
+    _analysis.post_order_visit(main_func, visit_func)
+    main_func = _expr.bind(main_func, const_params)
+    ...
+    return IRModule.from_expr(main_func, func_dict)
+```
+
+pass核心过程是_set_params，python版本的post_order_visit过程，并且只对relay.op.annotation.simulated_quantize类型的节点进行处理。处理过程中分别使用input_scale_func和weight_scale_func对数据进行收集
+
+@ tvm/python/tvm/relay/quantize/_calibrate.py
+
+```python
+def _kl_scale(mod, dataset):
+    ...
+    for samples in collect_stats(mod, dataset, chunk_by):
+        with mp.Pool() as pool:
+            scales += list(pool.map(_find_scale_by_kl, samples))
+    def func(_):
+        scale = scales[func.scale_idx]
+        func.scale_idx += 1
+        return scale
+    func.scale_idx = 0
+    return func
+
+```
+
+基本的数据收集操作，其中input_scale_func用scale_idx记录当前节点信息，每调用一次就增加，以此匹配visit过程的节点。得到的结果记录在const_params中，const_params中的key都是input节点，使用bind和main_func进行绑定。
+
+## realize
+
+``
+调用流程：
+1 ForwardRewrite遍历：
+1.1 ForwardRewriter::VisitExpr -> ForwardRewriter::Rewrite_
+2 FQRealizeRewrite修改：(同一个 C++文件)
+  2.1 再QuantizeRealize的实现中,实现各类算子的量化合饭莲花
+    2.1.1 simulated_quantize, cast_hint节点的处理
+  2.2 QRealizeIntExpr 和 QRealizeExpr (包装输出)
+``
+
+和之前的 pass 有不同的地方在于,对应算子的实现,实在 cpp 文件,而不是再 python 中重新开一个.
+
+@ tvm/src/relay/quantize/realize.cc
+
+```cpp
+Pass QuantizeRealizePass() {
+  runtime::TypedPackedFunc<Function(Function, IRModule, PassContext)> pass_func =
+      [=](Function f, IRModule m, PassContext pc) {
+        return Downcast<Function>(ForwardRewrite(f, "FQRealizeRewrite", nullptr, nullptr));
+      };
+  return CreateFunctionPass(pass_func, 1, "QuantizeRealize", {});
+}
+```
+
+依然是ForwardRewrite过程，使用的算子修改函数FQRealizeRewrite在C++中进行注册，其中比较重要的是simulated_quantize, 
+cast_hint节点的处理
+
+在扫描计算图时根据每个算子的实现规则，对图中的算子进行替换。扫描到模拟量化算子时，应根据其输入是否被临时表达式标注，选择将其替换为量化算子序列 或 重 量 化 算 子 序 列 。 在 原 流 程 中 ，量化调优的目标是最小化量化前后模multiply、round、clip、cast 构成了量化算型的输出误差。量化后，因为输入与权重子序列，推理时经
+
+@ tvm/src/relay/quantize/realize.cc
+
+
+我的看法式针对,simulated_quantize, cast_hint节点的都给出了处理方式
+另外其他本身的的 op,他也有对应的处理方式,这样共同实现了对应的量化合和梵莲花,十足 stop_fusion,貌似式没看到那里用到了?
+
+其实是偷懒了,没有仔细思考实现 
+
+### relay.build
+构建过程依然按照optimize->codegen->tvm_build的流程，具体过程的梳理可以查看【我与TVM二三事 前篇(终)】TVM基础模块总结对应章节，唯一需要注意的是annotation.stop_fusion会阻止算子分组
+
+@ tvm/src/relay/transforms/http://fuse_ops.cc
+
+static const Op& stop_fusion_op = Op::Get("annotation.stop_fusion");
+
+class FuseMutator : private MixedModeMutator {
+  Expr Rewrite_(const CallNode* call, const Expr& post) {
+    if (call->op.as<OpNode>()) {
+      ...
+      if (call->op == stop_fusion_op) {
+        return ExprMutator::VisitExpr(call->args[0]);
+      }
+    }
+  }
+}
