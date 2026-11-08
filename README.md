@@ -7,7 +7,11 @@
 - [cuda-gdb 基础使用指南](2023-3/cuda-gdb.md)
 - [CUDA 内存系统](2023-2/gpu-memory.md)
 - [windows下nvvp的基础使用1](2023-2/nvvp.md)
-  
+
+### 深度学习框架
+
+- [深度学习框架 Profiler 计时机制对比：PyTorch、PaddlePaddle 与 torch-npu](2026-11/mlsys_profiler.md)
+
 ### 网络
 
 - [从浏览器输入URL会发生什么?从浏览器控制台了解http协议](2018-6/http-2018-5-25.md)
@@ -51,7 +55,7 @@
 
 ### docker
 - [docker的生命周期和进程的状态](2021/docker_and_process.md)
- - [腾讯云/阿里云通过docker安装git服务](2022-2022-5/docker-gitlab.md/)
+ - [腾讯云/阿里云通过docker安装git服务](2022-5/docker-gitlab.md)
 
 ### 代码优化
 - [代码优化1:使用条件数据传送代替条件控制](2018-12/code_optimization1_conditional_data_transfer.md)
